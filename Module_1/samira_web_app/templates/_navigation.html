@@ -1,10 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<nav>
+  <ul>
+    <li class="{% if page == 'home' %}active{% endif %}">
+      <a href="{{ url_for('pages.home') }}">About</a>
+    </li>
+    <li class="{% if page == 'projects' %}active{% endif %}">
+      <a href="{{ url_for('pages.projects') }}">Projects</a>
+    </li>
+    <li class="{% if page == 'contact' %}active{% endif %}">
+      <a href="{{ url_for('pages.contact') }}">Contact</a>
+    </li>
+  </ul>
+</nav>

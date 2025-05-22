@@ -8,9 +8,29 @@
 
 {% extends 'base.html' %}
 
-{% block title %}Home - My Website{% endblock %}
+{% block title %}About{% endblock %}
 
 {% block content %}
-    <h1>Welcome to My Home Page</h1>
-    <p>This is the home page of the website.</p>
+<div class="bio-section">
+    <div class="bio-text">
+        <h1>Samira Ahmed</h1>
+        <h3>Master's Student in Data Science at Johns Hopkins University</h3>
+        <p>
+            Samira Ahmed is currently pursuing a Master’s in Data Science through the Johns Hopkins Engineering for Professionals program.
+            Her goal is to enhance her practical skill set and apply data-driven solutions to real-world problems, bridging the gap between theory and application.
+        </p>
+        <p>
+            She holds a Bachelor’s degree in Data Theory from the University of California, Los Angeles. During her undergraduate years,
+            Samira developed a passion for working with data — especially after competing in UCLA’s two-day hackathon, <strong>DataFest</strong>, where her team received the Judge's Choice Award.
+            That experience solidified her interest in applied data science.
+        </p>
+        <p>
+            Since then, Samira has focused on gaining hands-on experience with increasingly large and complex datasets.
+            Her graduate studies allow her to deepen that foundation and sharpen her ability to solve problems at scale using modern tools and methods.
+        </p>
+    </div>
+    <div class="bio-image">
+        <img src="{{ url_for('static', filename='samira_webapp.jpg') }}" alt="Samira" />
+    </div>
+</div>
 {% endblock %}

@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+# include m1 project title
+# include details about your m1 project
+# include a link to your m1 project github
 
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+    <h1>Projects</h1>
+
+    <div class="project-entry">
+        <h2>Samira Web Application</h2>
+        <p>
+            This web application is part of my Module 1 project for Modern Software Concepts in Python class in my graduate
+            studies at Johns Hopkins University. This project is built using Flask and demonstrates my understanding of
+            full-stack web development, project structuring, templating, and deploying a personal portfolio site.
+            The site includes a home (About) page, contact form, and project showcase where I showcase this project.
+        </p>
+        <p>
+            You can view the source code on GitHub:
+            <a href="https://github.com/samiraahmed99/jhu_software_concepts/tree/main/Module_1" target="_blank">Samira Web Application GitHub Repo</a>
+        </p>
+    </div>
+{% endblock %}

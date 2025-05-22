@@ -1,15 +1,10 @@
 # App factory function: creates and configures the app
 from flask import Flask
 
-# connect URL route "/" to the index() function by decorating it with @app.rout
-@app.route('/')
+# Import pages module where the Blueprint is defined in current working directory ( i.e.`.`)
+from . import pages
 
-def creat_app():
+def create_app():
     app = Flask(__name__)
-
-    app.register_blueprint(pages.bp)
-
+    app.register_blueprint(pages.bp)  # Register the Blueprint from pages.py
     return app
-
-
-

@@ -1,12 +1,25 @@
 # layout shell: includes head, nav bar, and page structure.
 # Each page (home.html, etc.) inherits base.html and replaces the {% block content %} part with page-specific info.
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <title>Samira Web Application - {% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
+  <h1>Samira Web Application</h1>
+
+  {% include '_navigation.html' %}
+
+  <section>
+    <header>
+      {% block header %}{% endblock %}
+    </header>
+    <main>
+      {% block content %}<p>No messages.</p>{% endblock %}
+    </main>
+  </section>
 </body>
 </html>

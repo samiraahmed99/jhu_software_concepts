@@ -1,0 +1,42 @@
+/* Navigation Bar Styles */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    padding: 1rem;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ccc;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+nav ul li.active a {
+    font-weight: bold;
+    color: #007BFF; /* highlight color */
+    border-bottom: 2px solid #007BFF;
+}
+
+/* Contact Page Styles */
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.contact-list li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.contact-list a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.contact-list a:hover {
+    text-decoration: underline;
+}

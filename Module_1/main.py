@@ -1,7 +1,7 @@
 from flask import Flask
 
 # import creat_app() function from __init__.py located in our web application module
-from samira_web_app import create_app()
+from samira_web_app import create_app
 # create a Flask application instance
 app = create_app()
 

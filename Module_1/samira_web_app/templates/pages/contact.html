@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+# include your email address
+# include your linkedIn information
 
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+    <h1>Contact</h1>
+
+    <p>You can reach me through the following platforms:</p>
+
+    <ul class="contact-list">
+        <li><strong>Email:</strong> <a href="mailto:sahme102@jh.edu">sahme102@jh.edu</a></li>
+        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/samira-ahmed-a1ba17201" target="_blank">linkedin.com/in/samira-ahmed</a></li>
+    </ul>
+{% endblock %}
