@@ -2,7 +2,8 @@
 from flask import Flask
 
 # Import pages module where the Blueprint is defined in current working directory ( i.e.`.`)
-from . import pages
+from samira_web_app import pages
+
 
 def create_app():
     app = Flask(__name__)
