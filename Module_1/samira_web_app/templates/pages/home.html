@@ -1,19 +1,11 @@
-# extend the base and add home content:
-# home page
-# include name
-# include your position
-# provide a bio
-# include a picture
-# positioning: bio text on left, image on right
-
 {% extends 'base.html' %}
 
-{% block title %}About{% endblock %}
+{% block title %}About{% endblock title %}
 
 {% block content %}
 <div class="bio-section">
     <div class="bio-text">
-        <h1>Samira Ahmed</h1>
+        <h1>Samira Ahmed (She/Her)</h1>
         <h3>Master's Student in Data Science at Johns Hopkins University</h3>
         <p>
             Samira Ahmed is currently pursuing a Master’s in Data Science through the Johns Hopkins Engineering for Professionals program.
@@ -29,8 +21,9 @@
             Her graduate studies allow her to deepen that foundation and sharpen her ability to solve problems at scale using modern tools and methods.
         </p>
     </div>
+
     <div class="bio-image">
-        <img src="{{ url_for('static', filename='samira_webapp.jpg') }}" alt="Samira" />
+        <img src="{{ url_for('static', filename='images/profile.jpg') }}" alt="Samira" />
     </div>
 </div>
-{% endblock %}
+{% endblock content %}

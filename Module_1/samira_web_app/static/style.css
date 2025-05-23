@@ -1,0 +1,130 @@
+/* === Base Reset === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* === Body & Typography === */
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #fffafc;
+  color: #333;
+  line-height: 1.6;
+  padding-bottom: 60px;
+}
+
+h1, h2, h3 {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 600;
+  color: #c2185b;
+  margin-bottom: 0.5rem;
+}
+
+/* === Navigation Bar === */
+nav {
+  background: linear-gradient(90deg, #f8bbd0, #f06292);
+  padding: 12px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end; /* moves it to the right */
+  gap: 1.5rem;
+  padding: 0 2rem;
+  margin: 0;
+}
+
+nav li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+nav li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+nav li.active a {
+  background-color: white;
+  color: #f06292;
+}
+
+/* === Main Content Section === */
+section {
+  max-width: 900px;  /* ← was 750px */
+  margin: 30px auto;
+  padding: 30px;
+  background: #fff0f5;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.05);
+}
+
+/* === Profile Picture === */
+.bio-image {
+  flex: 1;
+  min-width: 180px;
+  max-width: 300px;
+}
+
+.bio-image img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+/* === Bio Section === */
+.bio-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.bio-text {
+  flex: 2;
+  min-width: 300px;
+}
+
+.bio-text p {
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* === Contact Section === */
+.contact-list {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 1rem;
+}
+
+.contact-list li {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.contact-list a {
+  color: #d81b60;
+  text-decoration: none;
+}
+
+.contact-list a:hover {
+  text-decoration: underline;
+}
+
+/* === Footer Setup Placeholder (we'll add full footer later) === */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #999;
+}
