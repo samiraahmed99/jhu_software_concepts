@@ -7,7 +7,7 @@
 1. Clone this repository
 2. Access this repository in your terminal and navigate from the `jhu_software_concepts` 
 directory to the `module_1` directory.
-3. Create a virtual environment, activate the virtual environment and install necessary 
+3. Create a virtual environment, activate the virtual environment, and install necessary 
 dependencies with the following commands:   
 `python -m venv venv`   
 `source venv/bin/activate`  
