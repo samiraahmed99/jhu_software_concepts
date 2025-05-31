@@ -1,3 +1,4 @@
+# Confirm robo.txt file permits scraping
 import urllib.robotparser
 
 # Initialize RobotFileParser
