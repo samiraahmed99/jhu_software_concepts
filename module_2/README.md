@@ -25,11 +25,11 @@ and stored them in structured Python dictionaries which was later imported to a 
 `python -m venv venv` <br>
 `source venv/bin/activate` <br>
 `pip install -r requirements.txt` <br>
-4. Run the data extraction and export script using:
+4. Run the data extraction and export script using: <br>
 `python clean.py`
-5. This will scrape all survey entries from TheGradCafe (pages 1–500) and export the results to a clean, formatted JSON file named:
+5. This will scrape all survey entries from TheGradCafe (pages 1–500) and export the results to a clean, formatted JSON file named: <br>
 `applicant_data.json`
-6. You can find this file in the `module_2` directory. It will contain thousands of structured entries, each including:
+6. You can find this file in the `module_2` directory. It will contain thousands of structured entries, each including: <br>
 + University
 + Program
 + Degree
@@ -39,7 +39,7 @@ and stored them in structured Python dictionaries which was later imported to a 
 + Nationality 
 + Comments 
 + Link to applicant post
-7. When finished, you can stop the script and deactivate the virtual environment:
+7. When finished, you can stop the script and deactivate the virtual environment: <br>
 `deactivate`
 
 
