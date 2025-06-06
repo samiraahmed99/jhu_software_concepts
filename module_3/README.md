@@ -18,7 +18,7 @@ This project builds on prior work from Module 2, where data from [TheGradCafe](h
 Here in Module 3, the goal was to:
 1. Load that cleaned data into a PostgreSQL database using `psycopg2`
 2. Write SQL queries to answer meaningful questions about graduate school admissions
-3. Display the query results on a styled Flask webpage
+3. Display the query results on a styled `Flask` webpage
 
 ---
 
