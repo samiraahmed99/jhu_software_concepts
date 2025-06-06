@@ -1,4 +1,5 @@
 # Answer following questions by creating queries
+
 # Something to keep in mind :
 # | Field    | Min | Max  | Notes                             |
 # | -------- | --- | ---- | --------------------------------- |
@@ -40,16 +41,17 @@ def query_2(cur):
 
 def query_3(cur):
     cur.execute("""
-                SELECT ROUND(AVG(gpa)::numeric, 2),
-                       ROUND(AVG(gre)::numeric, 2),
-                       ROUND(AVG(gre_v)::numeric, 2),
-                       ROUND(AVG(gre_aw)::numeric, 2)
-                FROM applicants
-                WHERE gpa IS NOT NULL
-                   OR gre IS NOT NULL
-                   OR gre_v IS NOT NULL
-                   OR gre_aw IS NOT NULL;
-                """)
+        SELECT ROUND(AVG(gpa)::numeric, 2),
+               ROUND(AVG(gre)::numeric, 2),
+               ROUND(AVG(gre_v)::numeric, 2),
+               ROUND(AVG(gre_aw)::numeric, 2)
+        FROM applicants
+        WHERE
+            (gpa IS NULL OR (gpa >= 0 AND gpa <= 4.33)) AND
+            (gre IS NULL OR (gre >= 130 AND gre <= 170)) AND 
+            (gre_v IS NULL OR (gre_v >= 130 AND gre_v <= 170)) AND
+            (gre_aw IS NULL OR (gre_aw >= 0 AND gre_aw <= 6));
+    """)
     gpa, gre, gre_v, gre_aw = cur.fetchone()
     print(f"3. The average GPA: {gpa}, GRE: {gre}, GRE V: {gre_v}, GRE AW: {gre_aw}")
 
@@ -60,8 +62,9 @@ def query_4(cur):
                 SELECT ROUND(AVG(gpa)::numeric, 2)
                 FROM applicants
                 WHERE us_or_international = 'american'
-                  AND term = 'fall 2024'
-                  AND gpa IS NOT NULL;
+                  AND term = 'fall 2025'
+                  AND gpa IS NOT NULL
+                  AND gpa BETWEEN 0 AND 4.33;
                 """)
     print("4. The average GPA of American students in Fall 2025:", cur.fetchone()[0])
 
@@ -103,6 +106,23 @@ def query_7(cur):
     """)
     print("7. The amount of JHU CS Masters Applicants:", cur.fetchone()[0])
 
+# Find invalid entries
+
+# def find_invalid_scores(cur):
+#     cur.execute("""
+#         SELECT *
+#         FROM applicants
+#         WHERE
+#           gpa IS NOT NULL AND (gpa < 0 OR gpa > 4.33)
+#           OR gre IS NOT NULL AND (gre < 260 OR gre > 340)
+#           OR gre_v IS NOT NULL AND (gre_v < 130 OR gre_v > 170)
+#           OR gre_aw IS NOT NULL AND (gre_aw < 0 OR gre_aw > 6);
+#     """)
+#     rows = cur.fetchall()
+#     print(f"\n🔍 Found {len(rows)} invalid entries:")
+#     for row in rows:
+#         print(row)
+
 # We define a main function where we call all queries
 def main():
     with psycopg2.connect(**conn_info) as conn:
@@ -114,6 +134,7 @@ def main():
             query_5(cur)
             query_6(cur)
             query_7(cur)
+          # find_invalid_scores(cur)
 
 
 if __name__ == "__main__":
