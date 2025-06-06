@@ -6,29 +6,78 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Analysis</h1>
-    <div class="result">
-        <h3>How many entries for Fall 2025?</h3>
-        <p>Answer: Applicant count: {{ fall_2025_count }}</p>
+    <nav>
+        <div class="logo">🎓 Grad Cafe Analysis</div>
+    </nav>
 
-        <h3>What percentage of entries are from International students (not American or Other)?</h3>
-        <p>Answer: Percent International: {{ percent_international }}%</p>
+    <div class="container">
+        <header>
+            <h1>Grad School Cafe Data Analysis</h1>
+            <p>Fall 2025 Admission Cycle Summary</p>
+        </header>
 
-        <h3>What is the average GPA, GRE, GRE V, GRE AW of applicants who provided these metrics?</h3>
-        <p>Answer: GPA: {{ averages[0] }}, GRE: {{ averages[1] }}, GRE V: {{ averages[2] }}, GRE AW: {{ averages[3] }}</p>
+        <section class="card" data-label="Applicant Count">
+            <h2>🧮 1. How many entries do you have in your database who have applied for Fall 2025?</h2>
+            <div class="answer-label">Answer:</div>
+            <div class="metric-group">
+                <span class="metric"> {{ fall_2025_count }}</span>
+            </div>
+        </section>
 
-        <h3>What is the average GPA of American students in Fall 2025?</h3>
-        <p>Answer: Average GPA American: {{ avg_gpa_american }}</p>
+        <section class="card" data-label="Demographics">
+            <h2>🌍 2. What percentage of entries are from international students (not American or Other) (to two decimal places)?</h2>
+            <div class="answer-label">Answer:</div>
+            <div class="metric-group">
+                <span class="metric">{{ percent_international }}%</span>
+            </div>
+        </section>
 
-        <h3>What percent of entries for Fall 2025 are Acceptances?</h3>
-        <p>Answer: Acceptance percent: {{ percent_accept }}%</p>
+        <section class="card" data-label="Scores">
+            <h2>📊 3. What is the average GPA, GRE, GRE V, GRE AW of applicants who provide these metrics?</h2>
+            <div class="answer-label">Answer:</div>
+            <div class="metric-group">
+                <span class="metric">GPA: {{ averages[0] }}</span>
+                <span class="metric">GRE: {{ averages[1] }}</span>
+                <span class="metric">GRE V: {{ averages[2] }}</span>
+                <span class="metric">GRE AW: {{ averages[3] }}</span>
+            </div>
+        </section>
 
-        <h3>What is the average GPA of applicants who applied for Fall 2025 and were accepted?</h3>
-        <p>Answer: Average GPA Acceptance: {{ avg_gpa_accept }}</p>
+        <section class="card" data-label="American Students">
+            <h2>🇺🇸 4. What is their average GPA of American students in Fall 2025?</h2>
+            <div class="answer-label">Answer:</div>
+            <div class="metric-group">
+                <span class="metric">{{ avg_gpa_american }}</span>
+            </div>
+        </section>
 
-        <h3>How many entries are from applicants who applied to JHU for Masters Degrees in Computer Science?</h3>
-        <p>Answer: JHU Masters Computer Science count: {{ jhu_cs_count }}</p>
+        <section class="card" data-label="Admissions">
+            <h2>✅ 5. What percent of entries for Fall 2025 are Acceptances (to two decimal places)?</h2>
+            <div class="answer-label">Answer:</div>
+            <div class="metric-group">
+                <span class="metric">{{ percent_accept }}%</span>
+            </div>
+        </section>
+
+        <section class="card" data-label="Accepted Stats">
+            <h2>📈 6. What is the average GPA of applicants who applied for Fall 2025 who are Acceptances?</h2>
+            <div class="answer-label">Answer:</div>
+            <div class="metric-group">
+                <span class="metric">{{ avg_gpa_accept }}</span>
+            </div>
+        </section>
+
+        <section class="card" data-label="JHU Applicants">
+            <h2>🏛️ 7. How many entries are from applicants who applied to JHU for a masters degrees in Computer Science?</h2>
+            <div class="answer-label">Answer:</div>
+            <div class="metric-group">
+                <span class="metric">{{ jhu_cs_count }}</span>
+            </div>
+        </section>
+
+        <footer>
+            <p>Data sourced from <a href="https://www.thegradcafe.com/survey" target="_blank">TheGradCafe Survey</a></p>
+        </footer>
     </div>
 </body>
 </html>
-
