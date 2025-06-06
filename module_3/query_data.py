@@ -102,7 +102,7 @@ def query_7(cur):
         SELECT COUNT(*)
         FROM applicants
         WHERE program ILIKE '%Johns Hopkins University%Computer Science%'
-          AND degree ILIKE 'Masters';
+          AND degree ILIKE '%master%';
     """)
     print("7. The amount of JHU CS Masters Applicants:", cur.fetchone()[0])
 
